@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover clubs, gatherings, and happenings across Northstar University.">
+  <title>Campus Club & Event Explorer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="module" src="js/main.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Campus Club and Event Explorer home"><span class="brand-mark">CC</span><span>Campus Club<br><em>& Event Explorer</em></span></a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a class="active" href="#events">Explore</a>
+      <a href="#categories">Categories</a>
+      <a href="#gallery">Campus life</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-button" id="theme-toggle" type="button" aria-label="Switch to dark theme" title="Toggle theme">☼</button>
+      <a class="saved-link" href="#saved-events"><span id="saved-count">0</span> saved</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Northstar University / Fall 2025</p>
+        <h1 id="hero-title">Find your<br><span>people.</span></h1>
+        <p class="hero-intro">The best of campus, gathered in one place. From late-night film clubs to early-morning runs, there’s a seat with your name on it.</p>
+        <a class="button button-dark" href="#events">Explore events <span>↘</span></a>
+      </div>
+      <div class="hero-art" role="img" aria-label="Students relaxing on a sunny campus lawn">
+        <div class="hero-sticker">Make<br>some<br>noise <span>✳</span></div>
+        <div class="hero-caption"><span>01</span><span>Student commons<br>in full bloom</span></div>
+      </div>
+      <div class="hero-ribbon">Discover · Connect · Belong ·</div>
+    </section>
+
+    <section class="explore-section" id="events" aria-labelledby="events-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">Your week, sorted</p><h2 id="events-title">What’s happening</h2></div>
+        <p class="section-note">Fresh picks from 60+ student clubs<br>and campus communities.</p>
+      </div>
+      <div class="event-toolbar">
+        <label class="search-field"><span aria-hidden="true">⌕</span><input id="search-input" type="search" placeholder="Search events, clubs, places..." aria-label="Search events"></label>
+        <label class="select-field"><span>Show</span><select id="sort-select" aria-label="Sort events"><option value="date">Soonest first</option><option value="title">Alphabetical</option></select></label>
+      </div>
+      <div class="category-pills" id="category-filters" aria-label="Filter events by category"></div>
+      <div class="loading-state" id="loading-state"><span class="loader"></span> Gathering campus happenings...</div>
+      <div class="event-grid" id="event-grid" aria-live="polite"></div>
+      <p class="empty-state" id="empty-state" hidden>No events match that search. Try a different phrase or category.</p>
+    </section>
+
+    <section class="feature-section" aria-labelledby="featured-title">
+      <div class="feature-image" role="img" aria-label="A crowded campus community dinner table"></div>
+      <div class="feature-copy"><p class="eyebrow">Editor’s pick / This Thursday</p><h2 id="featured-title">One long table.<br><em>Everyone welcome.</em></h2><p>Community dinner is back in the courtyard. Bring a friend, bring your appetite, and leave room for a conversation you didn’t plan on having.</p><button class="text-button" id="featured-register" type="button">Reserve a seat <span>→</span></button></div>
+    </section>
+
+    <section class="categories-section" id="categories" aria-labelledby="categories-title">
+      <div class="section-heading"><div><p class="eyebrow">Find your frequency</p><h2 id="categories-title">Browse by mood</h2></div><span class="mono-label">Pick a lane. Or don’t.</span></div>
+      <div class="category-grid">
+        <button class="category-card category-art" data-category="Arts & Culture"><span class="category-number">01</span><strong>Arts<br>& Culture</strong><span class="category-arrow">↗</span></button>
+        <button class="category-card category-wellness" data-category="Wellness"><span class="category-number">02</span><strong>Wellness<br>& Outdoors</strong><span class="category-arrow">↗</span></button>
+        <button class="category-card category-career" data-category="Career"><span class="category-number">03</span><strong>Career<br>& Community</strong><span class="category-arrow">↗</span></button>
+        <button class="category-card category-social" data-category="Social"><span class="category-number">04</span><strong>Social<br>& Just for fun</strong><span class="category-arrow">↗</span></button>
+      </div>
+    </section>
+
+    <section class="gallery-section" id="gallery" aria-labelledby="gallery-title">
+      <div class="section-heading"><div><p class="eyebrow">Seen around campus</p><h2 id="gallery-title">Good times, documented</h2></div><span class="mono-label">#northstarlife</span></div>
+      <div class="gallery-grid">
+        <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=900&q=85" alt="Friends laughing together outdoors" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=900&q=85" alt="University building with students walking by" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=900&q=85" alt="A group of friends celebrating together" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=900&q=85" alt="Speaker presenting to a campus audience" loading="lazy">
+      </div>
+    </section>
+
+    <section class="media-strip" aria-label="Campus video and audio">
+      <div class="video-wrap"><iframe src="https://www.youtube.com/embed/1-La4Qz5a1M?rel=0" title="A day in campus life promotional video" loading="lazy" allowfullscreen></iframe></div>
+      <div class="audio-wrap"><p class="eyebrow">Soundtrack for the walk over</p><h2>Campus Radio<br><em>Live from 4–6.</em></h2><audio controls><source src="https://cdn.pixabay.com/download/audio/2022/10/25/audio_946f9c2d68.mp3?filename=lofi-study-112191.mp3" type="audio/mpeg">Your browser does not support audio playback.</audio><p class="mono-label">Student station / 88.4 FM</p></div>
+    </section>
+
+    <section class="registration-section" id="register" aria-labelledby="register-title">
+      <div class="registration-intro"><p class="eyebrow">Save your spot</p><h2 id="register-title">Show up<br><em>for something.</em></h2><p>Tell us where to send the details. We’ll take care of the rest.</p><p class="form-meta">* Required fields</p></div>
+      <form id="registration-form" novalidate>
+        <div class="form-row"><label for="name">Full name <span>*</span></label><input id="name" name="name" type="text" placeholder="e.g. Alex Morgan" autocomplete="name" required autofocus></div>
+        <div class="form-row"><label for="email">University email <span>*</span></label><input id="email" name="email" type="email" placeholder="you@northstar.edu" autocomplete="email" required></div>
+        <div class="form-row split"><div><label for="phone">Phone number <span>*</span></label><input id="phone" name="phone" type="tel" placeholder="(555) 123-4567" pattern="[0-9()\-+ ]{10,}" required></div><div><label for="department">Department</label><input id="department" name="department" type="text" placeholder="e.g. Design"></div></div>
+        <div class="form-row split"><div><label for="event-category">Category <span>*</span></label><select id="event-category" name="category" required><option value="">Choose one...</option></select></div><div><label for="event-date">Preferred date <span>*</span></label><input id="event-date" name="date" type="date" required></div></div>
+        <div class="form-row"><label for="message">Anything we should know?</label><textarea id="message" name="message" rows="3" placeholder="Accessibility needs, questions, a note for the host..."></textarea></div>
+        <label class="check-row"><input type="checkbox" name="updates" checked> <span>Keep me posted about similar events</span></label>
+        <fieldset class="radio-row"><legend>Best way to reach you?</legend><label><input type="radio" name="contact" value="email" checked> Email</label><label><input type="radio" name="contact" value="phone"> Phone</label></fieldset>
+        <button class="button button-coral" type="submit">Register for an event <span>↗</span></button>
+        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <aside class="debug-panel" aria-label="Developer debug panel"><strong>Debug / <span id="debug-status">ready</span></strong><span id="debug-output">Data, storage and registration events appear here.</span></aside>
+  <footer class="site-footer"><span>Northstar University © 2025</span><span>Built for curious minds <b>✳</b></span><a href="#top">Back to top ↑</a></footer>
+</body>
+</html>
